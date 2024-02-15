@@ -64,11 +64,22 @@ namespace Laitekirjasto
         public int StorageCapacity { get { return storageCapacity; } set { storageCapacity = value; } }
 
         //konstructorit
-        public Computer() : base() 
-            {}
-        
+        public Computer() : base()
+        {
 
-        // ominaisuudet
+        }
+        public Computer(string name) : base(name)
+        {
+
+        }
+
+        // Muut metodit
+        public void ShowInfo()
+        {
+
+        }
+
+
     }
 
     // Pääohjelman luokka, josta tulee Program.exe
@@ -89,8 +100,20 @@ namespace Laitekirjasto
              //luodaan uusi tietokone joka perii laiteluokan (device) ominaisuudet ja metodit
             Computer tietokone1 = new Computer();
 
-            // 
-            Console.WriteLine("uuudestaan uudestaan luodaan tietokone nimeltä" +  tietokone1.Name);
+            // asetetaan prosessori-ominaisuuden arvo
+            tietokone1.ProcessorType = "Intel i7";
+            tietokone1.AmountRam = 32;
+            Console.WriteLine("uuudestaan uudestaan...huusi Vainio. luodaan tietokone nimeltä `" +  tietokone1.Name + "` ja prosessorina toimii " + tietokone1.ProcessorType + " Ja muistia siinä on "  + tietokone1.AmountRam + " GB");
+            Console.WriteLine();
+
+            //Luodaan uusi nimetty tietokone toisella constructorilla
+            Computer tietokone2 = new Computer("Rikun maaginen taistelu peruna");
+            tietokone2.ProcessorType = "AMD Ryzen 9 5950x";
+            tietokone2.AmountRam = 32;
+            Console.WriteLine("luodaan tietokone nimeltä `" + tietokone2.Name + "` ja prosessorina toimii " + tietokone2.ProcessorType + " Ja muistia siinä on " + tietokone2.AmountRam + " GB");
+            Console.WriteLine();
+
+
 
             // Pidetään ikkuna auki, kunnes käyttäjä painaa <enter>
             Console.ReadLine();
