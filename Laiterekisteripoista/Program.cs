@@ -203,7 +203,7 @@ namespace Laitekirjasto
             tablet1.TabletInfo();
 
 
-            // Pidetään ikkuna auki, kunnes käyttäjä painaa <enter>
+            // Pidetään ikkuna auki,kunnes käyttäjä painaa <enter>
             Console.ReadLine();
         }
     }
