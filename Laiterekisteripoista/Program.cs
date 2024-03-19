@@ -6,11 +6,6 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-// Tiedostonkäsittelyyn ja serialisointiin tarvittavat kirjastot
-using System.IO;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
-
 namespace Laitekirjasto
 {
     // LUOKKAMÄÄRITYKSET
@@ -177,15 +172,6 @@ namespace Laitekirjasto
         // ---------------------------
         static void Main(string[] args)
         {
-            // Määritellään binääridatan muodostaja serialisointia varte
-            IFormatter formatter = new BinaryFormatter();
-
-            // Määritellään file stream tietokoneiden tietojen tallennusta varten
-            Stream writeStream = new FileStream("ComputerData.dat", FileMode.Create, FileAccess.Write);
-
-            // Määritellään file stream tietokoneiden tietojen lukemista varten
-
-
             // Luodaan vektorit ja laskurit niiden alkioille
             Computer[] computers = new Computer[10];
             Tablet[] tablets = new Tablet[10];
@@ -328,10 +314,6 @@ namespace Laitekirjasto
 
                     Console.WriteLine("Pinossa on nyt " + computerStack.Count + " tietokonetta");
                     break;
-
-                    // Tallennetaan koneiden tiedot tiedostoon serialisoimalla
-
-
                 }
             }
 
